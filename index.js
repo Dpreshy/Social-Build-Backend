@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 
 
-const port = 1234;
+const port = process.env.PORT || 1234;
 
 const app = express();
 
@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.status("success").json({
+    res.status(200).json({
         message: "It works"
     });
 });
